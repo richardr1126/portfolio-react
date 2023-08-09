@@ -11,7 +11,7 @@ import {
   Divider
 } from "@mantine/core";
 import { useState } from "react";
-import { useLocalStorage } from '@mantine/hooks';
+import { useColorScheme, useLocalStorage } from '@mantine/hooks';
 
 // My imports
 import AppHeader from "./components/AppHeader";
@@ -27,9 +27,10 @@ import Resume from "./sections/Resume";
 
 function App() {
   const [opened, setOpened] = useState(false);
+  const preferredColorScheme = useColorScheme();
   const [colorScheme, setColorScheme] = useLocalStorage({
     key: 'color-scheme',
-    defaultValue: 'dark',
+    defaultValue: preferredColorScheme || 'light',
     getInitialValueInEffect: true,
   });
 
