@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Using Large Language Models for Text-to-SQL Synthesis",
+    "imageSrc": "spidercoder.png",
+    "description": "This project fine-tunes a local large language model (LLM) WizardCoder-15B with QLoRA on a custom Spider training dataset to create a Text-to-SQL LLM. The resultant model, achieves 61% execution accuracy, incorporating database context for validation.",
+    "link": "https://huggingface.co/spaces/richardr1126/sql-skeleton-wizardcoder-demo",
+    "repo": "cuplv/text-to-sql-wizardcoder",
+    "demo": "https://richardr1126-sql-skeleton-wizardcoder-demo.hf.space"
+  },
+  {
+    "title":"TuneTidy iOS App",
+    "imageSrc": "tunetidy.jpg",
+    "description": "TuneTidy Native is a React Native iOS App that enhances the Spotify experience by enabling users to analyze their listening data and dynamically manage their playlists on the go. It also allows users to make AI generated Playlist Cover Art for their playlists.",
+    "link": "https://apps.apple.com/us/app/tunetidy/id6449473280",
+    "repo": "richardr1126/tune-tidy-native",
+    "demo": null
+  },
+  {
+    "title" : "TuneTidy Web App",
+    "imageSrc": "tunetidy-web.png",
+    "description": "TuneTidy is a React.js website that allows Spotify users to look at their listening data and organize their playlists by different criteria. The web app version of the iOS app.",
+    "link": "https://tunetidy.com",
+    "repo": "richardr1126/tune-tidy",
+    "demo": null
+  },
+  {
+    "title": "Artificial Intelligence Research",
+    "imageSrc": "gans.png",
+    "description": "A research paper posing the question: Why are Generative Adversarial Networks (GANs) Important for the Advancement of Artificial Intelligence?",
+    "link": "https://drive.google.com/file/d/1PTQwEOzN1iVxu9juAAJy4-uWJ3_gVgnd/view?usp=sharing",
+    "repo": null,
+    "demo": null
+  },
+  {
+    "title": "Personal Movie Reviews Website",
+    "imageSrc": "honest.png",
+    "description": "In my spare time I decided to make a MERN stack movie reviews website. It uses MongoDB Atlas, Express, React, and Node.js. Reviews are checked for spam using large language models with the OpenAI API. It uses the OMDb API to get movie information.",
+    "link": "https://movies.richardroberson.info",
+    "repo": "richardr1126/honest-reviews",
+    "demo": null
+  },
+  {
+    "title": "Manacala Game GUI Application",
+    "imageSrc": "mancala.png",
+    "description": "Created with Qt Creator using C++.",
+    "link": "https://www.youtube.com/watch?v=kWo38Yf9G8M&ab_channel=RichardRoberson",
+    "repo": "richardr1126/MancalaGameGUI",
+    "demo": null
+  },
+  {
+    "title": "Shoots and Ladders GUI Application",
+    "imageSrc": "shoots.png",
+    "description": "Created with Qt Creator using C++.",
+    "link": "https://drive.google.com/uc?id=1MYxkBCShS1XBy7FDulSE7JAyqCo4bfAs&export=download",
+    "repo": "richardr1126/ShutesAndLaddersGUI",
+    "demo": null
+  },
+  {
+    "title": "Online Blackjack Website",
+    "imageSrc": "gamblers.webp",
+    "description": "User authentication is implemented throughout the site. Users can play to earn currency and then spend it on items in the gift shop. Hosted on Heroku.",
+    "link": "https://blackjack-gamblers.herokuapp.com/",
+    "repo": "richardr1126/online_blackjack",
+    "demo": null
+  }
+]
