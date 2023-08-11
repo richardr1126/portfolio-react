@@ -1,24 +1,25 @@
 import { Paper, Progress, Text, Title, rem, List, Button, Collapse, Center, Space, ThemeIcon } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { FaChevronDown, FaChevronUp, FaCircle, FaRegCircle, FaArrowUp, FaStar, FaCrown, FaPython, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaJava } from 'react-icons/fa';
+import { FaChevronDown, FaRobot, FaChevronUp, FaCircle, FaRegCircle, FaArrowUp, FaStar, FaCrown, FaPython, FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaJava } from 'react-icons/fa';
 import { SiCplusplus, SiPostgresql, SiMongodb, SiFirebase, SiScala } from 'react-icons/si';
 
 
 const skillsData = [
+  { name: "LLMs", value: 5, icon: <FaRobot size="1.25rem" /> },
   { name: "Python", value: 4, icon: <FaPython size="1.25rem"/> },
   { name: "C++", value: 4, icon: <SiCplusplus size="1.25rem" /> },
   { name: "React.js", value: 5, icon: <FaReact size="1.25rem" /> },
-  { name: "React Native", value: 5, icon: <FaReact size="1.25rem" /> },
-  { name: "Node.js", value: 4, icon: <FaNodeJs size="1.25rem" /> },
+  { name: "React Native", value: 4, icon: <FaReact size="1.25rem" /> },
+  { name: "Node.js", value: 5, icon: <FaNodeJs size="1.25rem" /> },
   { name: "HTML", value: 5, icon: <FaHtml5 size="1.25rem" /> },
   { name: "CSS", value: 2, icon: <FaCss3Alt size="1.25rem" /> },
-  { name: "JavaScript", value: 4, icon: <FaJsSquare size="1.25rem" /> },
+  { name: "JavaScript", value: 5, icon: <FaJsSquare size="1.25rem" /> },
   { name: "Express", value: 4, icon: <FaNodeJs size="1.25rem" /> },  // Used Node.js logo for Express.js, you might want to find a more suitable one.
-  { name: "PostgreSQL", value: 3, icon: <SiPostgresql size="1.25rem" /> },
-  { name: "MongoDB", value: 5, icon: <SiMongodb size="1.25rem" /> },
-  { name: "Firebase", value: 5, icon: <SiFirebase size="1.25rem" /> },
-  { name: "Scala", value: 3, icon: <SiScala size="1.25rem" /> },
-  { name: "Java", value: 4, icon: <FaJava size="1.25rem" /> },
+  { name: "PostgreSQL", value: 4, icon: <SiPostgresql size="1.25rem" /> },
+  { name: "MongoDB", value: 4, icon: <SiMongodb size="1.25rem" /> },
+  { name: "Firebase", value: 4, icon: <SiFirebase size="1.25rem" /> },
+  { name: "Scala", value: 2, icon: <SiScala size="1.25rem" /> },
+  { name: "Java", value: 3, icon: <FaJava size="1.25rem" /> },
 ];
 
 
@@ -53,6 +54,7 @@ const SKILL_ICONS = {
 
 export default function Skills({ id }) {
   const [showMore, { toggle }] = useDisclosure(false);
+  const reorderedSkillsData = skillsData.sort((a, b) => b.value - a.value);
 
   return (
     <section id={id}>
@@ -77,13 +79,13 @@ export default function Skills({ id }) {
 
 
         {/* Display first 4 skills */}
-        {skillsData.slice(0, 5).map((skill, index) => (
+        {reorderedSkillsData.slice(0, 5).map((skill, index) => (
           <SkillItem key={index} skill={skill} />
         ))}
 
         <Collapse in={showMore}>
           {/* Display the rest of the skills */}
-          {skillsData.slice(5).map((skill, index) => (
+          {reorderedSkillsData.slice(5).map((skill, index) => (
             <SkillItem key={index + 4} skill={skill} />
           ))}
         </Collapse>
@@ -114,6 +116,7 @@ function SkillItem({ skill }) {
     };
   }
 
+  const skillLevelTitle = ['Novice', 'Beginner', 'Intermediate', 'Proficient', 'Expert'][skill.value - 1];
   const skillRep = getSkillRepresentation(skill.value);
 
   return (
@@ -124,7 +127,7 @@ function SkillItem({ skill }) {
           {skill.icon}
         </ThemeIcon>
       )}
-      <Progress value={skill.value * 20} style={{ flex: 7 }} color="indigo" size="xl" h={'xl'} radius={'md'} />
+      <Progress value={skill.value * 20} style={{ flex: 7 }} label={skillLevelTitle} color="indigo" size="xl" h={rem(30)} radius={'md'} />
 
       <ThemeIcon m={'xs'} variant={skillRep.variant} gradient={skillRep.gradient} size={'lg'} radius="xl">
         {skillRep.icon}
