@@ -13,7 +13,7 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
-    <Paper withBorder key={imageSrc+repo+demo} shadow="sm" p="md" radius={'md'} style={{display: 'flex', flexDirection: 'column'}}>
+    <Paper withBorder key={imageSrc+repo+demo} shadow="sm" p="lg" radius={'md'} style={{display: 'flex', flexDirection: 'column'}}>
       <div>
         {repo && (<ReadmeModal open={opened} onClose={close} repo={repo} />)}
         {demo && (<DemoModal open={openedDemo} onClose={closeDemo} demo={demo} />)}

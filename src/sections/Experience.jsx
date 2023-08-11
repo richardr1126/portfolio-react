@@ -17,7 +17,7 @@ function Experience({ id }) {
             <Space h={'sm'} />
             <Text size="lg" color="dimmed">
               Leading a project that finetunes large language models for text-to-SQL synthesis.
-              Learn more about the project in the recent project section below.
+              Learn more about the project in the Recent Projects section below.
             </Text>
             <Space h={'xs'} />
             <Group spacing={rem(5)}>
