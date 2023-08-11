@@ -62,7 +62,7 @@ export default function Skills({ id }) {
       {/* Skill explanation */}
 
 
-      <Paper p='xl' withBorder shadow="md">
+      <Paper p='xl' withBorder shadow="md" radius='md'>
         <Center>
           <List center mb={'md'} size={'lg'} spacing={rem(5)}>
             {Object.entries(SKILL_ICONS).map(([key, value]) => (
