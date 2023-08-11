@@ -1,6 +1,7 @@
-import { Header, Title, MediaQuery, Burger, Group, Avatar, useMantineTheme, rem } from "@mantine/core";
+import { Header, Title, MediaQuery, Burger, Group, useMantineTheme, rem, ThemeIcon } from "@mantine/core";
 import { SwitchToggle } from "./SwitchToggle";
 import BrandButtonGroup from "./BrandButtonGroup";
+import { FaCode } from "react-icons/fa";
 
 const AppHeader = ({ opened, setOpened }) => {
   const theme = useMantineTheme();
@@ -19,7 +20,10 @@ const AppHeader = ({ opened, setOpened }) => {
         </MediaQuery>
         <Group>
           <MediaQuery smallerThan="sm" styles={{ display: 'none'}}>
-            <Avatar radius="md" size={rem(40)} color="blue" src="avatar.jpg" />
+            {/* <Avatar radius="md" size={rem(40)} color="blue" src="avatar.jpg" /> */}
+            <ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'red.5', to: 'orange.5', deg: 45 }}>
+              <FaCode size={rem(30)} />
+            </ThemeIcon>
           </MediaQuery>
           <MediaQuery smallerThan="sm" styles={{ fontSize: 17}}>
             <Title fw={900} order={1} size={'h2'} variant={'gradient'} gradient={{ from: 'red.5', to: 'orange.5', deg: 45 }}>Richard Roberson's Portfolio</Title>
