@@ -23,6 +23,7 @@ import Introduction from "./sections/Introduction";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Resume from "./sections/Resume";
+import Experience from "./sections/Experience";
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
   const toggleColorScheme = (value) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
-  const sections = ['intro', 'education', 'projects', 'skills', 'resume'];
+  const sections = ['intro', 'education', 'experience', 'projects', 'skills', 'resume'];
   const activeSection = useActiveSection(sections);
 
   // Set page title
@@ -62,7 +63,8 @@ function App() {
               <TableOfContents
                 links={[
                   { label: "Introduction", link: "#intro", order: 1 },
-                  { label: "Education", link: "#education", order: 2 },
+                  { label: "Education", link: "#education", order: 1 },
+                  { label: "Experience", link: "#experience", order: 1 },
                   { label: "Projects", link: "#projects", order: 1 },
                   { label: "Skills", link: "#skills", order: 1 },
                   { label: "Resume", link: "#resume", order: 1 }
@@ -89,7 +91,8 @@ function App() {
 
               <Introduction id='intro' />
               <Divider />
-
+              <Experience id='experience' />
+              <Divider />
               <Projects id='projects' />
               <Divider />
               <Skills id='skills' />

@@ -5,16 +5,13 @@ import Education from '../sections/Education';
 const useStyles = createStyles((theme) => ({
   card: {
     position: 'relative',
-    cursor: 'pointer',
+
     overflow: 'hidden',
-    transition: 'transform 150ms ease, box-shadow 100ms ease',
+    boxShadow: theme.shadows.sm,
     padding: theme.spacing.xl,
     paddingLeft: `calc(${theme.spacing.xl} * 1.2)`,
 
-    '&:hover': {
-      boxShadow: theme.shadows.md,
-      transform: 'scale(1.02)',
-    },
+
 
     '&::before': {
       content: '""',

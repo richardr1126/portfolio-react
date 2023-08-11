@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "latest",
+    "@svgr/cli": "^8.0.1",
     "@svgr/webpack": "^7.0.0"
   },
   "overrides": {
@@ -30,6 +31,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "svgr": "svgr -d src/icons/ src/icons/",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

@@ -1,6 +1,6 @@
 import {
-  SimpleGrid, Card, Image, Text, Title, Button, rem, Center, Space,
-  ActionIcon, Group
+  SimpleGrid, Image, Text, Title, Button, rem, Center, Space,
+  ActionIcon, Group, Paper
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import ReadmeModal from '../components/ReadmeModal';
@@ -13,12 +13,12 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
   const [opened, { open, close }] = useDisclosure(false);
 
   return (
-    <Card key={imageSrc+repo+demo} shadow="sm" padding="md" radius={'md'} style={{display: 'flex', flexDirection: 'column'}}>
+    <Paper withBorder key={imageSrc+repo+demo} shadow="sm" p="md" radius={'md'} style={{display: 'flex', flexDirection: 'column'}}>
       <div>
         {repo && (<ReadmeModal open={opened} onClose={close} repo={repo} />)}
         {demo && (<DemoModal open={openedDemo} onClose={closeDemo} demo={demo} />)}
         <Image src={imageSrc} fit="cover" radius={'md'} />
-        <Title order={3} my={rem(10)}>
+        <Title order={2} my={rem(10)}>
           {title}
         </Title>
         <Text size="lg" color="dimmed">
@@ -34,13 +34,13 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
           <FaGithub />
         </ActionIcon>)}
       </Group>
-    </Card>
+    </Paper>
   );
 };
 
 
 const Projects = ({ id }) => {
-  const [visibleCards, setVisibleCards] = useState(3);
+  const [visibleCards, setVisibleCards] = useState(2);
   const [opened, { open, close }] = useDisclosure(false);
 
   const handleViewMore = () => {
@@ -48,14 +48,14 @@ const Projects = ({ id }) => {
   };
 
   const handleViewLess = () => {
-    setVisibleCards(3);
+    setVisibleCards(2);
   };
 
   return (
     <section id={id}>
       <Title order={2} mb={rem(15)}>Recent Projects</Title>
       <SimpleGrid
-        cols={3}
+        cols={2}
         spacing="lg"
         breakpoints={[
           { maxWidth: 'md', cols: 1, spacing: 'sm' }, // stack all columns at small breakpoint
