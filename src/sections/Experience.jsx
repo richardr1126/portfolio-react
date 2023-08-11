@@ -12,11 +12,12 @@ function Experience({ id }) {
             <Image src="cuplv.png" alt="UCB" width={rem(75)} height={rem(75)} />
           </ThemeIcon>
           <Stack spacing={0}>
+            <Title order={3}>Machine Learning Research</Title>
             <Title order={4}>Programming Languages and Verification at the University of Colorado Boulder</Title>
             <Text size="md" fw={600} color="dimmed">2023 - Present</Text>
             <Space h={'sm'} />
             <Text size="lg" color="dimmed">
-              Leading a project that finetunes large language models for text-to-SQL synthesis.
+              Leading a research project that finetunes large language models for text-to-SQL synthesis.
               Learn more about the project in the Recent Projects section below.
             </Text>
             <Space h={'xs'} />
