@@ -1,9 +1,9 @@
-import { MediaQuery } from "@mantine/core";
+import { MediaQuery, Title, rem } from "@mantine/core";
 
 function Resume({ id }) {
   return (
     <section id={id}>
-      <h2>Resume (currently outdated)</h2>
+      <Title order={2} mb={rem(15)}>Resume (currently outdated)</Title>
 
       <MediaQuery smallerThan={'sm'} styles={{ display: 'none'}}>
         <iframe
