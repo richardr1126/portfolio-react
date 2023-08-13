@@ -1,5 +1,5 @@
 import { createStyles, ThemeIcon, Text, SimpleGrid, Box, Stack } from '@mantine/core';
-import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react';
+import { IconPhone, IconMapPin, IconAt } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme, { variant }) => ({
   wrapper: {
