@@ -26,6 +26,7 @@ import Skills from "./sections/Skills";
 import Resume from "./sections/Resume";
 import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
+import { FooterSocial } from "./components/Footer";
 
 
 function App() {
@@ -93,7 +94,6 @@ function App() {
 
               {/* Sections */}
               <Stack spacing={'xl'}>
-
                 <Introduction id='intro' />
                 <Divider />
                 <Experience id='experience' />
@@ -105,8 +105,11 @@ function App() {
                 <Contact id='contact' />
                 <Divider />
                 <Resume id='resume' />
+
               </Stack>
             </Container>
+
+            <FooterSocial />
           </AppShell>
 
         </MantineProvider>

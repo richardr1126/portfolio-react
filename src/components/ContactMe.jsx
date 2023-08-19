@@ -10,7 +10,8 @@ import {
   Button,
   Group,
   rem,
-  Paper
+  Paper,
+  Space
 } from '@mantine/core';
 import BrandButtonGroup from './BrandButtonGroup';
 import { ContactIconsList } from './ContactIconsList';
@@ -106,7 +107,7 @@ export function ContactMe() {
 
   return (
     <div className={classes.wrapper}>
-      <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+      <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 920, cols: 1 }]}>
         <div>
           <Title className={classes.title}>Contact Info</Title>
           <Text className={classes.description} mt="sm" mb={30}>
@@ -114,9 +115,9 @@ export function ContactMe() {
           </Text>
 
           <ContactIconsList variant="white" />
-          <Paper radius={'md'} p={'md'} mt={'md'}>
-            <BrandButtonGroup />
-          </Paper>
+          <Space h={'xl'} />
+          <BrandButtonGroup variant="filled" />
+
 
         </div>
         <Paper radius={'md'} p={'xl'}>
