@@ -17,7 +17,7 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
       <div>
         {repo && (<ReadmeModal open={opened} onClose={close} repo={repo} />)}
         {demo && (<DemoModal open={openedDemo} onClose={closeDemo} demo={demo} />)}
-        <Image src={imageSrc} fit="cover" radius={'md'} />
+        <Image src={imageSrc} fit="cover" radius={'md'} fallbackSrc="https://placehold.co/600x400?text=Loading&font=roboto" />
         <Title order={2} my={rem(10)}>
           {title}
         </Title>
