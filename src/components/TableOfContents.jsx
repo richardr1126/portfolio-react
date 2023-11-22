@@ -35,7 +35,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function TableOfContents({ links, active }) {
+export function TableOfContents({ links, active, setOpened }) {
   const { classes, cx } = useStyles();
 
   const scrollTo = (event, link) => {
@@ -52,6 +52,8 @@ export function TableOfContents({ links, active }) {
       top: offsetPosition,
       behavior: 'smooth',
     });
+
+    setOpened(false);
   };
 
   const items = links.map((item) => (

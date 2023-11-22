@@ -70,17 +70,19 @@ function App() {
                     { label: "Introduction", link: "#intro", order: 1 },
                     { label: "Education", link: "#education", order: 1 },
                     { label: "Experience", link: "#experience", order: 1 },
-                    { label: "Projects", link: "#projects", order: 2 },
-                    { label: "Skills", link: "#skills", order: 2 },
+                    { label: "Projects", link: "#projects", order: 1 },
+                    { label: "Skills", link: "#skills", order: 1 },
                     { label: "Contact Info", link: "#contact", order: 1 },
-                    { label: "Resume", link: "#resume", order: 1 }
+                    { label: "Resume", link: "#resume", order: 1 },
                   ]}
                   active={activeSection}
+                  setOpened={setOpened}
                 />
               </Navbar>
             }
             header={<AppHeader opened={opened} setOpened={setOpened} />}
             bg={colorScheme === 'dark' ? 'dark' : 'gray.0'}
+
           >
             {/* Main content */}
             <Container size="xl">

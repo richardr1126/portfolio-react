@@ -29,7 +29,7 @@ export function useActiveSection(sections) {
             );
           }
         });
-
+        
         setIntersectingSections(newIntersectingSections);
       },
       { threshold: 0.1, rootMargin: '-75px 0px 0px 0px' } // adjust top margin to offset navbar height
