@@ -68,7 +68,7 @@ function App() {
                 <TableOfContents
                   links={[
                     { label: "Introduction", link: "#intro", order: 1 },
-                    { label: "Education", link: "#education", order: 1 },
+                    { label: "Education", link: "#education", order: 2 },
                     { label: "Experience", link: "#experience", order: 1 },
                     { label: "Projects", link: "#projects", order: 1 },
                     { label: "Skills", link: "#skills", order: 1 },
