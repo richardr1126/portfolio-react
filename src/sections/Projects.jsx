@@ -78,11 +78,11 @@ const Projects = ({ id }) => {
       </SimpleGrid>
       <Center mt={rem(20)}>
         {visibleCards < projects.length ? (
-          <Button onClick={handleViewMore} variant='light'>
+          <Button onClick={handleViewMore} variant='light' size='lg'>
             More Projects<Space w={rem(5)}></Space><FaChevronDown />
           </Button>
         ) : (
-          <Button onClick={handleViewLess} variant='light'>
+          <Button onClick={handleViewLess} variant='light' size='lg'>
             Less Projects<Space w={rem(5)}></Space><FaChevronUp />
           </Button>
         )}

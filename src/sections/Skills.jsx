@@ -5,16 +5,16 @@ import { SiCplusplus, SiPostgresql, SiMongodb, SiFirebase, SiScala } from 'react
 
 
 const skillsData = [
-  { name: "LLMs", value: 5, icon: <FaRobot size="1.25rem" /> },
-  { name: "Python", value: 4, icon: <FaPython size="1.25rem"/> },
+  { name: "LLMs", value: 4, icon: <FaRobot size="1.25rem" /> },
+  { name: "Python", value: 5, icon: <FaPython size="1.25rem"/> },
   { name: "C++", value: 4, icon: <SiCplusplus size="1.25rem" /> },
   { name: "React.js", value: 5, icon: <FaReact size="1.25rem" /> },
-  { name: "React Native", value: 4, icon: <FaReact size="1.25rem" /> },
+  { name: "React Native", value: 5, icon: <FaReact size="1.25rem" /> },
   { name: "Node.js", value: 5, icon: <FaNodeJs size="1.25rem" /> },
   { name: "HTML", value: 5, icon: <FaHtml5 size="1.25rem" /> },
   { name: "CSS", value: 2, icon: <FaCss3Alt size="1.25rem" /> },
-  { name: "JavaScript", value: 5, icon: <FaJsSquare size="1.25rem" /> },
-  { name: "Express", value: 4, icon: <FaNodeJs size="1.25rem" /> },  // Used Node.js logo for Express.js, you might want to find a more suitable one.
+  { name: "JavaScript", value: 4, icon: <FaJsSquare size="1.25rem" /> },
+  { name: "Express", value: 4, icon: <FaNodeJs size="1.25rem" /> },
   { name: "PostgreSQL", value: 4, icon: <SiPostgresql size="1.25rem" /> },
   { name: "MongoDB", value: 4, icon: <SiMongodb size="1.25rem" /> },
   { name: "Firebase", value: 4, icon: <SiFirebase size="1.25rem" /> },

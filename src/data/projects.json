@@ -5,7 +5,7 @@
     "description": "This project fine-tunes a local large language model (LLM) WizardCoder-15B with QLoRA on a custom Spider training dataset to create a Text-to-SQL LLM. The resultant model, achieves 61% execution accuracy, incorporating database context for validation.",
     "link": "https://huggingface.co/spaces/richardr1126/sql-skeleton-wizardcoder-demo",
     "repo": "cuplv/text-to-sql-wizardcoder",
-    "demo": "https://richardr1126-sql-skeleton-wizardcoder-demo.hf.space"
+    "demo": null
   },
   {
     "title":"TuneTidy iOS App",
