@@ -1,7 +1,24 @@
-import { Title, rem, Text, Group, Badge, Flex, Image, Stack, Paper, Button, ActionIcon, ThemeIcon, Space, MediaQuery } from "@mantine/core";
-import { FaGithub } from "react-icons/fa";
+import { Title, rem, Text, Group, Badge, Flex, Image, Stack, Paper, Button, ThemeIcon, Space, MediaQuery } from "@mantine/core";
+import { FaGithub, FaSearch } from "react-icons/fa";
+import { MdWeb } from "react-icons/md";
 
 function Experience({ id }) {
+  const scrollTo = (event, link) => {
+    event.preventDefault();
+    // scroll to section with offset for Title
+    const section = document.querySelector(link);
+    const offset = 75;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = section.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <section id={id}>
       <Title order={2} mb={rem(15)}>Work Experience</Title>
@@ -38,12 +55,35 @@ function Experience({ id }) {
           </MediaQuery>
 
         </Flex>
-        <Group mt={'xs'} spacing={rem(5)}>
-          <ActionIcon variant='light' h={rem(35)} w={rem(35)} onClick={() => window.open('https://github.com/cuplv', '_blank')}>
-            <FaGithub />
-          </ActionIcon>
-          <Button h={rem(35)} variant='light' color='blue' style={{ flex: 1 }} onClick={() => window.open('https://plv.colorado.edu/', '_blank')}>Vist CUPLV Website</Button>
+        <Group mt={'xs'} spacing={rem(5)} style={{flex: 3}}>
+          <Button
+            h={rem(35)}
+            variant='light'
+            color="teal"
+            leftIcon={<FaSearch />}
+            style={{ flex: 1 }}
+            onClick={(e) => scrollTo(e, '#projects')}>
+            Learn more about my project
+          </Button>
+          <Button
+            h={rem(35)}
+            variant='light'
+            leftIcon={<FaGithub />}
+            style={{ flex: 1 }}
+            onClick={() => window.open('https://github.com/cuplv', '_blank')}>
+            CUPLV GitHub
+          </Button>
+          <Button
+            h={rem(35)}
+            variant='light'
+            color='blue'
+            leftIcon={<MdWeb />}
+            style={{ flex: 1 }}
+            onClick={() => window.open('https://plv.colorado.edu/', '_blank')}>
+            CUPLV Website
+          </Button>
         </Group>
+
 
       </Paper>
     </section>
