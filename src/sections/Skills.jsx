@@ -65,7 +65,7 @@ export default function Skills({ id }) {
       <Paper p='xl' withBorder shadow="md" radius='md'>
         <Center>
           <List center mb={'md'} size={'lg'} spacing={rem(5)}>
-            {Object.entries(SKILL_ICONS).map(([key, value]) => (
+            {Object.entries(SKILL_ICONS).reverse().map(([key, value]) => (
               <List.Item key={key} icon={
                 <ThemeIcon variant={value.variant} gradient={value.gradient} size={30} radius="xl">
                   {value.icon}
@@ -128,10 +128,6 @@ function SkillItem({ skill }) {
         </ThemeIcon>
       )}
       <Progress value={skill.value * 20} style={{ flex: 7 }} label={skillLevelTitle} color="indigo" size="xl" h={rem(30)} radius={'md'} />
-
-      <ThemeIcon m={'xs'} variant={skillRep.variant} gradient={skillRep.gradient} size={'lg'} radius="xl">
-        {skillRep.icon}
-      </ThemeIcon>
 
     </div>
   );
