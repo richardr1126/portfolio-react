@@ -1,5 +1,13 @@
 [
   {
+    "title": "Analyzing the Effectiveness of Large Language Models on Text-to-SQL Synthesis",
+    "imageSrc": "https://info.arxiv.org/brand/images/brand-logo-black.jpg",
+    "description": "This published study investigates various approaches to using Large Language Models (LLMs) for Text-to-SQL program synthesis, focusing on the outcomes and insights derived. Employing the popular Text-to-SQL dataset, spider, the goal was to input a natural language question along with the database schema and output the correct SQL SELECT query.",
+    "link": "https://arxiv.org/abs/2401.12379",
+    "repo": null,
+    "demo": null
+  },
+  {
     "title": "Using Large Language Models for Text-to-SQL Synthesis",
     "imageSrc": "spidercoder.png",
     "description": "This project fine-tunes a local large language model (LLM) WizardCoder-15B with QLoRA on a custom Spider training dataset to create a Text-to-SQL LLM. The resultant model, achieves 61% execution accuracy, incorporating database context for validation.",
