@@ -67,7 +67,7 @@ function Experience({ id }) {
         <Flex align={'center'} wrap={'wrap'} p={'xs'}>
           <MediaQuery largerThan={600} styles={{ flex: 1, marginLeft: rem(10) }}>
             <Stack spacing={0}>
-              <Title order={3}>Freelance Front-End Developer</Title>
+              <Title order={3}>Fullstack Freelance Developer</Title>
               <Text size="md" fw={600} color="dimmed">June 2024 - Present</Text>
               <Space h={'sm'} />
               <Text size="md" color="dimmed">
@@ -76,15 +76,15 @@ function Experience({ id }) {
               </Text>
               <Space h={'sm'} />
               <Group spacing={rem(5)}>
-                <Badge color="teal" variant="light" size="lg">React</Badge>
-                <Badge color="orange" variant="light" size="lg">Front-End Development</Badge>
+                <Badge color="orange" variant="light" size="lg">Frontend Development</Badge>
+                <Badge color="teal" variant="light" size="lg">Backend Development</Badge>
               </Group>
               <Space h={'xs'} />
             </Stack>
           </MediaQuery>
         </Flex>
         <Flex mt={'xs'}>
-          <Button h={rem(35)} variant='light' color="teal" leftIcon={<FaSearch />} style={{ flex: 1 }} onClick={(e) =>  /* Add link to website */ {
+          <Button h={rem(35)} variant='light' color="teal" leftIcon={<FaSearch />} style={{ flex: 1 }} onClick={(e) =>{
             window.open('https://www.upwork.com/freelancers/~015b295507f2496334', '_blank');
           }}>
             Visit freelance profile

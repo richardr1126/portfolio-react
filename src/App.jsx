@@ -107,7 +107,6 @@ function App() {
                 <Contact id='contact' />
                 <Divider />
                 <Resume id='resume' />
-
               </Stack>
             </Container>
 
