@@ -57,7 +57,7 @@ function App() {
         <MantineProvider theme={{ colorScheme, primaryColor: 'orange', fontFamily: 'Greycliff CF, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji' }} withGlobalStyles withNormalizeCSS>
           <CustomFonts />
           <AppShell
-            padding="md"
+            padding="sm"
             navbar={
               <Navbar
                 p="md"
