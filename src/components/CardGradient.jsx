@@ -31,7 +31,7 @@ export function CardGradient({ title, description }) {
   return (
     <Paper withBorder radius="md" className={classes.card}>
       <Group spacing={rem(5)}>
-        <Avatar radius="md" size={rem(60)} color="blue" src="avatar-mountain.jpg" />
+        <Avatar radius="md" size={rem(60)} color="blue" src="avatar.jpeg" />
         <ThemeIcon
           size={rem(60)}
           radius="md"
