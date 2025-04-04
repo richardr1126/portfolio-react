@@ -1,9 +1,9 @@
 import { Global } from '@mantine/core';
 
-import regular from './GreycliffCF-Regular.woff2';
-import medium from './GreycliffCF-Medium.woff2';
-import bold from './GreycliffCF-Bold.woff2'
-import heavy from './GreycliffCF-Heavy.woff2'
+import regular from './figtree-v7-latin-300.woff2';
+import medium from './figtree-v7-latin-500.woff2';
+import bold from './figtree-v7-latin-700.woff2';
+import heavy from './figtree-v7-latin-900.woff2';
 
 export default function CustomFonts() {
   return (
@@ -11,7 +11,7 @@ export default function CustomFonts() {
       styles={[
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Figtree',
             src: `url('${regular}') format("woff2")`,
             fontWeight: 300,
             fontStyle: 'normal',
@@ -19,7 +19,7 @@ export default function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Figtree',
             src: `url('${medium}') format("woff2")`,
             fontWeight: 500,
             fontStyle: 'normal',
@@ -27,7 +27,7 @@ export default function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Figtree',
             src: `url('${bold}') format("woff2")`,
             fontWeight: 700,
             fontStyle: 'normal',
@@ -35,7 +35,7 @@ export default function CustomFonts() {
         },
         {
           '@font-face': {
-            fontFamily: 'Greycliff CF',
+            fontFamily: 'Figtree',
             src: `url('${heavy}') format("woff2")`,
             fontWeight: 900,
             fontStyle: 'normal',

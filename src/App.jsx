@@ -54,7 +54,7 @@ function App() {
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
       <ChakraProvider>
 
-        <MantineProvider theme={{ colorScheme, primaryColor: 'orange', fontFamily: 'Greycliff CF, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji' }} withGlobalStyles withNormalizeCSS>
+        <MantineProvider theme={{ colorScheme, primaryColor: 'orange', fontFamily: 'Figtree, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji' }} withGlobalStyles withNormalizeCSS>
           <CustomFonts />
           <AppShell
             padding="sm"
