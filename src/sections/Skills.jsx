@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { Paper, Progress, Text, Title, rem, Button, Collapse, Center, Space, ThemeIcon } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { FaChevronDown, FaRobot, FaChevronUp, FaCircle, FaRegCircle, FaArrowUp, FaStar, FaCrown, FaPython, FaReact, FaNodeJs, FaHtml5, FaJsSquare, FaJava, FaAws } from 'react-icons/fa';
-import { SiCplusplus, SiFastapi, SiPostgresql, SiMongodb, SiScala, SiFlask, SiTypescript, SiRedis, SiApachekafka, SiDigitalocean, SiGooglecloud, SiMicrosoftazure, SiKubernetes, SiHelm, SiC } from 'react-icons/si';
+import { SiCplusplus, SiFastapi, SiPostgresql, SiMongodb, SiScala, SiFlask, SiTypescript, SiRedis, SiApachekafka, SiDigitalocean, SiGooglecloud, SiMicrosoftazure, SiKubernetes, SiHelm, SiC, SiOpensearch } from 'react-icons/si';
 
 const skillsData = {
   languages: [
@@ -26,16 +26,17 @@ const skillsData = {
   ],
   databases: [
     { name: "PostgreSQL", value: 4, icon: <SiPostgresql size={rem(20)} /> },
+    { name: "OpenSearchDB", value: 3, icon: <SiOpensearch size={rem(20)} /> },
     { name: "Redis", value: 2, icon: <SiRedis size={rem(20)} /> },
     { name: "Kafka", value: 3, icon: <SiApachekafka size={rem(20)} /> },
     { name: "MongoDB", value: 3, icon: <SiMongodb size={rem(20)} /> },
   ],
   cloud: [
-    { name: "Kubernetes", value: 3, icon: <SiKubernetes size={rem(20)} /> },
-    { name: "DigitalOcean", value: 4, icon: <SiDigitalocean size={rem(20)} /> },
+    { name: "Kubernetes", value: 4, icon: <SiKubernetes size={rem(20)} /> },
+    { name: "DigitalOcean", value: 3, icon: <SiDigitalocean size={rem(20)} /> },
     { name: "Google Cloud", value: 2, icon: <SiGooglecloud size={rem(20)} /> },
     { name: "Azure", value: 3, icon: <SiMicrosoftazure size={rem(20)} /> },
-    { name: "AWS", value: 1, icon: <FaAws size={rem(20)} /> },
+    { name: "AWS", value: 3, icon: <FaAws size={rem(20)} /> },
   ],
 };
 

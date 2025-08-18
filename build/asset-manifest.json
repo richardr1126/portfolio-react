@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.a0be41d6.css",
-    "main.js": "/static/js/main.4bd020f8.js",
-    "static/media/GreycliffCF-Heavy.woff2": "/static/media/GreycliffCF-Heavy.c3ae8388130a7344684f.woff2",
-    "static/media/GreycliffCF-Medium.woff2": "/static/media/GreycliffCF-Medium.f35deb16fc5b1c5ae57f.woff2",
-    "static/media/GreycliffCF-Bold.woff2": "/static/media/GreycliffCF-Bold.79a73e09190f74868e57.woff2",
-    "static/media/GreycliffCF-Regular.woff2": "/static/media/GreycliffCF-Regular.df1c1ca03150e4002fc1.woff2",
+    "main.css": "/static/css/main.3d522651.css",
+    "main.js": "/static/js/main.2e9e96ea.js",
+    "static/media/figtree-v7-latin-700.woff2": "/static/media/figtree-v7-latin-700.b04dc5d81118ee3f5d0f.woff2",
+    "static/media/figtree-v7-latin-500.woff2": "/static/media/figtree-v7-latin-500.f5fad4cdfce9c6df0394.woff2",
+    "static/media/figtree-v7-latin-900.woff2": "/static/media/figtree-v7-latin-900.b4cda84743adf66d693c.woff2",
+    "static/media/figtree-v7-latin-300.woff2": "/static/media/figtree-v7-latin-300.8aacafd9a0c35f9b2bf2.woff2",
     "static/media/huggingface.svg": "/static/media/huggingface.360b78b0e34ed30211b38765bfb67bcb.svg",
     "index.html": "/index.html",
-    "main.a0be41d6.css.map": "/static/css/main.a0be41d6.css.map",
-    "main.4bd020f8.js.map": "/static/js/main.4bd020f8.js.map"
+    "main.3d522651.css.map": "/static/css/main.3d522651.css.map",
+    "main.2e9e96ea.js.map": "/static/js/main.2e9e96ea.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0be41d6.css",
-    "static/js/main.4bd020f8.js"
+    "static/css/main.3d522651.css",
+    "static/js/main.2e9e96ea.js"
   ]
 }

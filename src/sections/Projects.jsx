@@ -5,8 +5,7 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import ReadmeModal from '../components/ReadmeModal';
 import DemoModal from '../components/DemoModal';
-import projects from '../data/projects.json';
-import { useMemo } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp, FaGithub } from 'react-icons/fa';
 
 const getColorFromString = (str) => {
@@ -62,6 +61,14 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
 const Projects = ({ id }) => {
   const [showMore, { toggle }] = useDisclosure(false);
   const [opened, { open, close }] = useDisclosure(false);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch('/projects.json')
+      .then(response => response.json())
+      .then(data => setProjects(data))
+      .catch(error => console.error('Error fetching projects:', error));
+  }, []);
 
   return (
     <section id={id}>
