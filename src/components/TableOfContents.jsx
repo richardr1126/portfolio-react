@@ -72,7 +72,7 @@ export function TableOfContents({ links, active, setOpened }) {
   return (
     <div>
       <Group mb="md">
-        <IconListSearch size="1.1rem" stroke={1.5} />
+        <IconListSearch size={18} stroke={1.5} />
         <Text>Jump to</Text>
       </Group>
       {items}

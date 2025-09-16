@@ -14,23 +14,28 @@ const ReadmeModal = ({ open, onClose, repo }) => {
   
 
   useEffect(() => {
-    //if error try master instead of main
-    const githubUrl = `https://raw.githubusercontent.com/${repo}/main/README.md`; // replace {owner} and {repo} with the repo details
+    if (!open || !repo) return;
+    // if error try master instead of main
+    const githubUrl = `https://raw.githubusercontent.com/${repo}/main/README.md`;
 
-    
+    let cancelled = false;
     fetch(githubUrl)
       .then((response) => response.text())
       .then((data) => {
+        if (cancelled) return;
         if (data.includes('404: Not Found')) {
           fetch(githubUrl.replace('main', 'master'))
             .then((response) => response.text())
-            .then((data) => setReadmeContent(data));
+            .then((data) => {
+              if (!cancelled) setReadmeContent(data);
+            });
         } else {
-          setReadmeContent(data)
+          setReadmeContent(data);
         }
       });
-    
-  }, [repo]);
+
+    return () => { cancelled = true };
+  }, [open, repo]);
 
   return (
     <Modal
@@ -39,6 +44,7 @@ const ReadmeModal = ({ open, onClose, repo }) => {
       title="README.md from GitHub"
       overflow="auto"
       size={rem(1000)}
+      keepMounted={false}
     >
       {
         readmeContent ? (

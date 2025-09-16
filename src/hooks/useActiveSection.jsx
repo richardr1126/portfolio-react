@@ -1,48 +1,59 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export function useActiveSection(sections) {
   const [activeSection, setActiveSection] = useState();
   const [intersectingSections, setIntersectingSections] = useState([]);
+  const observerRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      entries => {
-        let newIntersectingSections = [...intersectingSections];
+    // Create a single observer instance and keep it stable across re-renders
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        setIntersectingSections((prev) => {
+          let newIntersectingSections = [...prev];
 
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const existingIndex = newIntersectingSections.findIndex(
-              section => section.id === entry.target.id
-            );
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const existingIndex = newIntersectingSections.findIndex(
+                (section) => section.id === entry.target.id
+              );
 
-            if (existingIndex !== -1) {
-              newIntersectingSections[existingIndex].rect = entry.boundingClientRect;
+              if (existingIndex !== -1) {
+                newIntersectingSections[existingIndex].rect = entry.boundingClientRect;
+              } else {
+                newIntersectingSections.push({
+                  id: entry.target.id,
+                  rect: entry.boundingClientRect,
+                });
+              }
             } else {
-              newIntersectingSections.push({
-                id: entry.target.id,
-                rect: entry.boundingClientRect,
-              });
+              newIntersectingSections = newIntersectingSections.filter(
+                (section) => section.id !== entry.target.id
+              );
             }
-          } else {
-            newIntersectingSections = newIntersectingSections.filter(
-              section => section.id !== entry.target.id
-            );
-          }
+          });
+
+          return newIntersectingSections;
         });
-        
-        setIntersectingSections(newIntersectingSections);
       },
       { threshold: 0.1, rootMargin: '-75px 0px 0px 0px' } // adjust top margin to offset navbar height
     );
 
-    sections.forEach(section => {
-      observer.observe(document.getElementById(section));
+    // Observe provided section ids
+    sections.forEach((sectionId) => {
+      const el = document.getElementById(sectionId);
+      if (el) {
+        observerRef.current.observe(el);
+      }
     });
 
     return () => {
-      observer.disconnect();
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
     };
-  }, [sections, intersectingSections]);
+  // Only set up when the list of ids changes
+  }, [sections]);
 
   useEffect(() => {
     if (intersectingSections.length > 0) {

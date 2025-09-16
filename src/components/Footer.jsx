@@ -36,7 +36,7 @@ export function FooterSocial() {
       <Container className={classes.inner}>
         <Group>
           <ThemeIcon size="xl" radius="md" variant="gradient" gradient={{ from: 'red.5', to: 'orange.5', deg: 45 }}>
-            <FaCode size={rem(30)} />
+            <FaCode size={30} />
           </ThemeIcon>
           <Text color="dimmed" m={rem(10)}>
             &copy; {new Date().getFullYear()} Richard Roberson

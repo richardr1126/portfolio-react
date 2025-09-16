@@ -41,11 +41,11 @@ function ContactIcon({
     <div className={cx(classes.wrapper, className)} {...others}>
       {variant === 'gradient' ? (
         <ThemeIcon size={40} radius="md" className={classes.icon}>
-          <Icon size="1.5rem" />
+          <Icon size={24} />
         </ThemeIcon>
       ) : (
         <Box mr="md">
-          <Icon size="1.5rem" />
+          <Icon size={24} />
         </Box>
       )}
 

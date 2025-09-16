@@ -18,7 +18,7 @@ const getColorFromString = (str) => {
   return colors[hash % colors.length];
 };
 
-const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDemo, openDemo, closeDemo, tags }) => {
+const ArticleCard = ({ imageSrc, title, description, link, repo, demo, onOpenDemo, tags }) => {
   const [opened, { open, close }] = useDisclosure(false);
 
   const tagColors = useMemo(() => {
@@ -29,8 +29,7 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
     <Paper withBorder key={imageSrc + repo + demo} shadow="sm" p="lg" radius={'md'} style={{ display: 'flex', flexDirection: 'column' }}>
       <div>
         {repo && (<ReadmeModal open={opened} onClose={close} repo={repo} />)}
-        {demo && (<DemoModal open={openedDemo} onClose={closeDemo} demo={demo} />)}
-        <Image src={imageSrc} fit="cover" radius={'md'} fallbackSrc="https://placehold.co/600x400?text=Loading&font=roboto" />
+        <Image src={imageSrc} fit="cover" radius={'md'} loading="lazy" />
         <Title order={2} my={rem(10)}>
           {title}
         </Title>
@@ -46,7 +45,7 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
       </div>
       <Group style={{ marginTop: 'auto' }} spacing={0}>
         {repo && (<Button variant="light" mt="md" mr='xs' onClick={open}>Read More</Button>)}
-        {demo && (<Button variant="light" mt="md" mr='xs' color='teal' onClick={openDemo}>Demo</Button>)}
+        {demo && (<Button variant="light" mt="md" mr='xs' color='teal' onClick={() => onOpenDemo(demo)}>Demo</Button>)}
         {link && <Button variant="light" mt="md" component="a" color='indigo' href={link} target="_blank">Visit</Button>}
         <div style={{ flexGrow: 1 }}></div>
         {repo && (<ActionIcon size={'lg'} variant="light" mt="md" onClick={() => window.open(`https://github.com/${repo}`, '_blank')}>
@@ -60,7 +59,10 @@ const ArticleCard = ({ imageSrc, title, description, link, repo, demo, openedDem
 
 const Projects = ({ id }) => {
   const [showMore, { toggle }] = useDisclosure(false);
-  const [opened, { open, close }] = useDisclosure(false);
+  // Single shared demo modal state
+  const [demoUrl, setDemoUrl] = useState(null);
+  const onOpenDemo = (url) => setDemoUrl(url);
+  const onCloseDemo = () => setDemoUrl(null);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -91,9 +93,7 @@ const Projects = ({ id }) => {
             repo={project.repo}
             demo={project.demo}
             tags={project.tags}
-            openedDemo={opened}
-            openDemo={open}
-            closeDemo={close}
+            onOpenDemo={onOpenDemo}
             key={index}
           />
         ))}
@@ -117,9 +117,7 @@ const Projects = ({ id }) => {
               repo={project.repo}
               demo={project.demo}
               tags={project.tags}
-              openedDemo={opened}
-              openDemo={open}
-              closeDemo={close}
+              onOpenDemo={onOpenDemo}
               key={index + 2}
             />
           ))}
@@ -135,6 +133,8 @@ const Projects = ({ id }) => {
           )}
         </Button>
       </Center>
+      {/* Shared Demo Modal, renders only when a demo has been selected */}
+      {demoUrl && <DemoModal open={Boolean(demoUrl)} onClose={onCloseDemo} demo={demoUrl} />}
     </section>
   );
 };

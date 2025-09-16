@@ -1,68 +1,78 @@
 import { Fragment } from 'react';
 import { Paper, Progress, Text, Title, rem, Button, Collapse, Center, Space, ThemeIcon } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { FaChevronDown, FaRobot, FaChevronUp, FaCircle, FaRegCircle, FaArrowUp, FaStar, FaCrown, FaPython, FaReact, FaNodeJs, FaHtml5, FaJsSquare, FaJava, FaAws } from 'react-icons/fa';
-import { SiCplusplus, SiFastapi, SiPostgresql, SiMongodb, SiScala, SiFlask, SiTypescript, SiRedis, SiApachekafka, SiDigitalocean, SiGooglecloud, SiMicrosoftazure, SiKubernetes, SiHelm, SiC, SiOpensearch } from 'react-icons/si';
+import { FaChevronDown, FaRobot, FaChevronUp, FaCircle, FaRegCircle, FaArrowUp, FaStar, FaCrown, FaPython, FaReact, FaNodeJs, FaHtml5, FaJsSquare, FaJava, FaAws, FaGithub } from 'react-icons/fa';
+import { SiCplusplus, SiFastapi, SiPostgresql, SiMongodb, SiScala, SiFlask, SiTypescript, SiRedis, SiApachekafka, SiDigitalocean, SiGooglecloud, SiMicrosoftazure, SiKubernetes, SiHelm, SiC, SiOpensearch, SiDocker, SiGitlab } from 'react-icons/si';
+
+const skills = [
+  { name: "Python", value: 5, icon: <FaPython size={20}/> },
+  { name: "TypeScript", value: 4, icon: <SiTypescript size={20} /> },
+  { name: "JavaScript", value: 4, icon: <FaJsSquare size={20} /> },
+  { name: "HTML/CSS", value: 3, icon: <FaHtml5 size={20} /> },
+  { name: "C++", value: 3, icon: <SiCplusplus size={20} /> },
+  { name: "C", value: 2, icon: <SiC size={20} /> },
+  { name: "Java", value: 3, icon: <FaJava size={20} /> },
+  { name: "Scala", value: 1, icon: <SiScala size={20} /> },
+];
+const frameworks = [
+  { name: "FastAPI", value: 3, icon: <SiFastapi size={20} /> },
+  { name: "React.js", value: 5, icon: <FaReact size={20} /> },
+  { name: "LangChain", value: 4, icon: <FaRobot size={20} /> },
+  { name: "LangGraph", value: 3, icon: <FaRobot size={20} /> },
+  { name: "Flask", value: 4, icon: <SiFlask size={20} /> },
+  { name: "React Native", value: 4, icon: <FaReact size={20} /> },
+  { name: "Node.js", value: 4, icon: <FaNodeJs size={20} /> },
+];
+const databases = [
+  { name: "PostgreSQL", value: 4, icon: <SiPostgresql size={20} /> },
+  { name: "Redis", value: 2, icon: <SiRedis size={20} /> },
+  { name: "Kafka", value: 3, icon: <SiApachekafka size={20} /> },
+  { name: "S3 Buckets", value: 4, icon: <FaAws size={20} /> },
+  { name: "OpenSearch", value: 3, icon: <SiOpensearch size={20} /> },
+  { name: "MongoDB", value: 3, icon: <SiMongodb size={20} /> },
+];
+const devops = [
+  { name: "Kubernetes", value: 4, icon: <SiKubernetes size={20} /> },
+  { name: "Helm", value: 3, icon: <SiHelm size={20} /> },
+  { name: "Docker", value: 5, icon: <SiDocker size={20} /> },
+  { name: "GitHub Actions", value: 4, icon: <FaGithub size={20} /> },
+  { name: "GitLab CI/CD", value: 3, icon: <SiGitlab size={20} /> },
+  { name: "Digital Ocean", value: 2, icon: <SiDigitalocean size={20} /> },
+  { name: "AWS", value: 4, icon: <FaAws size={20} /> },
+  { name: "Google Cloud", value: 3, icon: <SiGooglecloud size={20} /> },
+  { name: "Azure", value: 3, icon: <SiMicrosoftazure size={20} /> },
+];
 
 const skillsData = {
-  languages: [
-    { name: "Python", value: 5, icon: <FaPython size={rem(20)}/> },
-    { name: "TypeScript", value: 4, icon: <SiTypescript size={rem(20)} /> },
-    { name: "JavaScript", value: 4, icon: <FaJsSquare size={rem(20)} /> },
-    { name: "HTML/CSS", value: 3, icon: <FaHtml5 size={rem(20)} /> },
-    { name: "C++", value: 3, icon: <SiCplusplus size={rem(20)} /> },
-    { name: "C", value: 2, icon: <SiC size={rem(20)} /> },
-    { name: "Java", value: 3, icon: <FaJava size={rem(20)} /> },
-    { name: "Scala", value: 1, icon: <SiScala size={rem(20)} /> },
-  ],
-  tools: [
-    { name: "Helm", value: 3, icon: <SiHelm size={rem(20)} /> },
-    { name: "Flask", value: 4, icon: <SiFlask size={rem(20)} /> },
-    { name: "FastAPI", value: 3, icon: <SiFastapi size={rem(20)} /> },
-    { name: "React.js", value: 5, icon: <FaReact size={rem(20)} /> },
-    { name: "React Native", value: 4, icon: <FaReact size={rem(20)} /> },
-    { name: "Node.js", value: 4, icon: <FaNodeJs size={rem(20)} /> },
-    { name: "LLMs", value: 4, icon: <FaRobot size={rem(20)} /> },
-  ],
-  databases: [
-    { name: "PostgreSQL", value: 4, icon: <SiPostgresql size={rem(20)} /> },
-    { name: "OpenSearchDB", value: 3, icon: <SiOpensearch size={rem(20)} /> },
-    { name: "Redis", value: 2, icon: <SiRedis size={rem(20)} /> },
-    { name: "Kafka", value: 3, icon: <SiApachekafka size={rem(20)} /> },
-    { name: "MongoDB", value: 3, icon: <SiMongodb size={rem(20)} /> },
-  ],
-  cloud: [
-    { name: "Kubernetes", value: 4, icon: <SiKubernetes size={rem(20)} /> },
-    { name: "DigitalOcean", value: 3, icon: <SiDigitalocean size={rem(20)} /> },
-    { name: "Google Cloud", value: 2, icon: <SiGooglecloud size={rem(20)} /> },
-    { name: "Azure", value: 3, icon: <SiMicrosoftazure size={rem(20)} /> },
-    { name: "AWS", value: 3, icon: <FaAws size={rem(20)} /> },
-  ],
+  languages: skills,
+  tools: frameworks,
+  databases: databases,
+  cloud: devops,
 };
 
 const SKILL_ICONS = {
   1: {
-    icon: <FaCircle size={rem(20)} />,
+    icon: <FaCircle size={20} />,
     variant: "gradient",
     gradient: { from: 'lime', to: 'green', deg: 157.5 }
   },
   2: {
-    icon: <FaRegCircle size={rem(20)} />,
+    icon: <FaRegCircle size={20} />,
     variant: "gradient",
     gradient: { from: 'green', to: 'cyan', deg: 157.5 }
   },
   3: {
-    icon: <FaArrowUp size={rem(20)} />,
+    icon: <FaArrowUp size={20} />,
     variant: "gradient",
     gradient: { from: 'cyan', to: 'blue', deg: 157.5 }
   },
   4: {
-    icon: <FaStar size={rem(20)} />,
+    icon: <FaStar size={20} />,
     variant: "gradient",
     gradient: { from: 'blue', to: 'purple', deg: 157.5 }
   },
   5: {
-    icon: <FaCrown size={rem(20)} />,
+    icon: <FaCrown size={20} />,
     variant: "gradient",
     gradient: { from: '#FFD700', to: '#FFA500', deg: 157.5 } // gold to orange color gradient for a rich gold look
   },
@@ -104,7 +114,7 @@ export default function Skills({ id }) {
           ))}
 
           <Space h="md" />
-          <Title order={3} size="h4" mb={rem(15)}>Cloud Providers</Title>
+          <Title order={3} size="h4" mb={rem(15)}>DevOps</Title>
           {skillsData.cloud.map((skill, index) => (
             <SkillItem key={`cloud-${index}`} skill={skill} />
           ))}

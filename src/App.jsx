@@ -10,7 +10,7 @@ import {
   Container,
   Divider
 } from "@mantine/core";
-import { useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useLocalStorage } from '@mantine/hooks';
 import { ChakraProvider } from '@chakra-ui/react'
 
@@ -43,11 +43,13 @@ function App() {
   const toggleColorScheme = (value) =>
     setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
 
-  const sections = ['intro', 'education', 'experience', 'projects', 'skills', 'contact', 'resume'];
+  const sections = useMemo(() => ['intro', 'education', 'experience', 'projects', 'skills', 'contact', 'resume'], []);
   const activeSection = useActiveSection(sections);
 
   // Set page title
-  document.title = "Richard Roberson's Portfolio";
+  useEffect(() => {
+    document.title = "Richard Roberson's Portfolio";
+  }, []);
 
 
   return (

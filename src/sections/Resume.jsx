@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Title, rem } from "@mantine/core";
 
 function Resume({ id }) {
   const [iframeHeight, setIframeHeight] = useState('500px');
+  const [visible, setVisible] = useState(false);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     // Function to dynamically calculate height based on screen width
@@ -26,18 +28,39 @@ function Resume({ id }) {
     return () => window.removeEventListener('resize', calculateHeight);
   }, []);
 
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id={id}>
+    <section id={id} ref={containerRef}>
       <Title order={2} mb={rem(15)}>Resume</Title>
 
-      <iframe
-        src="https://drive.google.com/file/d/1lq_ojDOxMp-16QLF8Jdrc1eT8Kb7n2Qe/preview"
-        width="100%"
-        height={iframeHeight}
-        allow="autoplay"
-        title="Resume PDF"
-        style={{ border: "none" }}
-      ></iframe>
+      {visible ? (
+        <iframe
+          src="https://drive.google.com/file/d/1lq_ojDOxMp-16QLF8Jdrc1eT8Kb7n2Qe/preview"
+          width="100%"
+          height={iframeHeight}
+          allow="autoplay"
+          title="Resume PDF"
+          loading="lazy"
+          style={{ border: "none" }}
+        />
+      ) : (
+        <div style={{ width: '100%', height: iframeHeight, border: 'none', background: 'transparent' }} />
+      )}
     </section>
   );
 }

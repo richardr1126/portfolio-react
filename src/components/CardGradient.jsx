@@ -38,7 +38,7 @@ export function CardGradient({ title, description }) {
           variant="gradient"
           gradient={{ deg: 0, from: 'pink', to: 'orange' }}
         >
-          <FaRegHandshake size={rem(35)} />
+          <FaRegHandshake size={35} />
         </ThemeIcon>
       </Group>
 

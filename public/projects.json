@@ -1,30 +1,12 @@
 [
   {
-    "title": "Research Podcasts Platform",
-    "imageSrc": "researchpod.png",
-    "description": "A Kubernetes microservices architecture that can scale and parallelize large amounts of RAG processing LLM pipelines using Kafka as a message broker. Start a researching query, which looks a publically available research from arXiv, and the system will generate a short form podcast episode using high quality text to speech; sending updates back to the client along the way.",
-    "link": "https://researchpod.richardr.dev",
-    "repo": "richardr1126/research-pod-api",
+    "title": "K8s Agents Service",
+    "imageSrc": "agents.png",
+    "description": "A production-ready Kubernetes deployment platform for AI agents built with LangGraph, FastAPI, and Streamlit. Features comprehensive Helm charts with dual-architecture deployment, ArgoCD GitOps integration, YugabyteDB with pgvector for RAG capabilities, and automated cron jobs for vector database maintenance. Includes both Streamlit and Next.js UIs with multi-agent support for resume assistance and web research.",
+    "link": "https://chat.richardr.dev",
+    "repo": "richardr1126/k8s-agents-service",
     "demo": null,
-    "tags": ["Kubernetes", "Kafka", "LLMs"]
-  },
-  {
-    "title": "Custom Bluesky feed in a home lab environment",
-    "imageSrc": "https://flowingdata.com/wp-content/uploads/2024/11/Bluesky-firehose-750x527.png",
-    "description": "A custom feed generator server with a docker PostgreSQL database for Bluesky posts relating to the Cosmere by Brandon Sanderson. Uses the Python atproto SDK. Orchestrates web, firehose, scheduler, and postgres services together in a home lab setup to serve the custome feed on Bluesky.",
-    "link": "https://github.com/richardr1126/cosmere-feed-bsky",
-    "repo": "richardr1126/cosmere-feed-bsky",
-    "demo": null,
-    "tags": ["Bluesky", "Docker", "PostgreSQL", "Python"]
-  },
-  {
-    "title": "Web-based text-to-speech document reader",
-    "imageSrc": "openreader.png",
-    "description": "OpenReader WebUI is a dockerized web EPUB and PDF text to speech document reader app meant for use with external TTS API. Read documents in realtime with high-quality text-2-speech; or extract audiobooks. Use your own Kokoro FastAPI or Open AI API endpoint.",
-    "link": "https://openreader.richardr.dev",
-    "repo": "richardr1126/OpenReader-WebUI",
-    "demo": null,
-    "tags": ["Docker", "Next.js", "Kokoro FastAPI", "Text-2-Speech"]
+    "tags": ["Kubernetes", "LangGraph", "FastAPI", "Streamlit", "Next.js", "YugabyteDB", "RAG", "ArgoCD", "Helm", "Docker", "GitOps", "LLMs"]
   },
   {
     "title": "Analyzing the Effectiveness of Large Language Models on Text-to-SQL Synthesis",
@@ -34,6 +16,33 @@
     "repo": "cuplv/text-to-sql-wizardcoder",
     "demo": null,
     "tags": ["Research", "LLM", "Machine Learning", "Python"]
+  },
+  {
+    "title": "Research Podcasts Platform",
+    "imageSrc": "researchpod.png",
+    "description": "A distributed research analysis system using RAG to process academic papers from arXiv and generate AI-powered podcast summaries. Features event-driven architecture with Kafka for reliability, YugabyteDB for distributed SQL storage with pgvector, high-quality TTS audio generation, and real-time progress tracking via server-sent events. Includes semantic similarity-based recommendations and comprehensive Kubernetes deployment.",
+    "link": "https://researchpod.richardr.dev",
+    "repo": "richardr1126/research-pod-api",
+    "demo": null,
+    "tags": ["Kubernetes", "Kafka", "RAG", "YugabyteDB", "TTS", "Flask", "React", "TanStack", "arXiv", "LLMs", "Azure OpenAI"]
+  },
+  {
+    "title": "Custom Bluesky feed in a home lab environment",
+    "imageSrc": "https://flowingdata.com/wp-content/uploads/2024/11/Bluesky-firehose-750x527.png",
+    "description": "A specialized ATProto feed service for Brandon Sanderson's Cosmere universe fans. Features intelligent filtering using comprehensive keyword sets, trending and chronological post combination, Kubernetes microservices architecture with YugabyteDB, and home lab deployment with SSL/TLS termination. Includes web API service, firehose processing, scheduler service, and automatic DNS management with Cloudflare.",
+    "link": "https://github.com/richardr1126/cosmere-feed-bsky",
+    "repo": "richardr1126/cosmere-feed-bsky",
+    "demo": null,
+    "tags": ["Bluesky", "ATProto", "Kubernetes", "YugabyteDB", "Flask", "Python", "Cloudflare", "NGINX", "Home Lab", "Brandon Sanderson"]
+  },
+  {
+    "title": "Web-based text-to-speech document reader",
+    "imageSrc": "openreader.png",
+    "description": "A comprehensive document reader with TTS capabilities supporting EPUB, PDF, TXT, MD, and DOCX formats. Features real-time read-along experience with highlighted text, audiobook creation and export (M4B format), mobile PWA support, customizable TTS settings, and local-first architecture using IndexedDB. Compatible with multiple TTS APIs including Kokoro-FastAPI, Orpheus-FastAPI, and OpenAI.",
+    "link": "https://openreader.richardr.dev",
+    "repo": "richardr1126/OpenReader-WebUI",
+    "demo": null,
+    "tags": ["Next.js", "TTS", "PWA", "IndexedDB", "Docker", "Tailwind CSS", "Kokoro", "OpenAI", "EPUB", "PDF", "Audiobooks"]
   },
   {
     "title": "Using Large Language Models for Text-to-SQL Synthesis",
@@ -47,20 +56,20 @@
   {
     "title":"TuneTidy iOS App",
     "imageSrc": "tunetidy.jpg",
-    "description": "TuneTidy Native is a React Native iOS App that enhances the Spotify experience by enabling users to analyze their listening data and dynamically manage their playlists on the go. It also allows users to make AI generated Playlist Cover Art for their playlists.",
+    "description": "A React Native iOS app that enhances Spotify with advanced playlist management and analytics. Features comprehensive playlist sorting by audio features (danceability, energy, tempo, etc.), top tracks/artists/albums analysis across multiple time ranges, AI-generated playlist cover art using DALL-E, real-time playlist reordering with progress tracking, and OAuth 2.0 authentication with PKCE.",
     "link": "https://apps.apple.com/us/app/tunetidy/id6449473280",
     "repo": "richardr1126/tune-tidy-native",
     "demo": null,
-    "tags": ["React Native", "iOS", "Spotify API"]
+    "tags": ["React Native", "iOS", "Spotify API", "TanStack Query", "Firebase", "OpenAI", "DALL-E", "OAuth", "Analytics"]
   },
   {
     "title" : "TuneTidy Web App",
     "imageSrc": "tunetidy-web.png",
-    "description": "TuneTidy is a React.js website that allows Spotify users to look at their listening data and organize their playlists by different criteria. The web app version of the iOS app.",
+    "description": "A comprehensive React.js web application for Spotify playlist management and music analytics. Features advanced playlist sorting by multiple criteria including audio features (acousticness, danceability, energy, etc.), listening statistics with time-based analysis, playlist editing capabilities, and user authentication via Spotify OAuth. Built with Chakra UI and deployed on Netlify.",
     "link": "https://tunetidy.com",
     "repo": "richardr1126/tune-tidy",
     "demo": null,
-    "tags": ["React.js", "Spotify API"]
+    "tags": ["React.js", "Spotify API", "Chakra UI", "OAuth", "Netlify", "Music Analytics", "Playlist Management"]
   },
   {
     "title": "Artificial Intelligence Research",
