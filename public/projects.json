@@ -1,5 +1,15 @@
 [
   {
+     "title": "NATS JetStream AI Pipeline w/ Dashboard",
+     "imageSrc": "datacenter.png",
+     "description": "A complete data processing pipeline using NATS JetStream for messaging between microservices, with support for cloud-native Kubernetes deployment on Google Kubernetes Engine (GKE). Features cost-optimized GKE cluster management, real-time sentiment analysis, and a Next.js visualization dashboard. Includes NATS server with JetStream persistence, firehose data ingestion, stream processing with sentiment analysis, and mock data generation for development.",
+     "link": "https://github.com/richardr1126/k8s-datacenter-project",
+     "repo": "richardr1126/k8s-datacenter-project",
+     "demo": null,
+     "tags": ["Kubernetes", "GKE", "NATS", "JetStream", "Docker", "Next.js", "Sentiment Analysis", "Topic Classifaction", "Microservices", "Cloud"]
+
+  },
+  {
     "title": "K8s Agents Service",
     "imageSrc": "agents.png",
     "description": "A production-ready Kubernetes deployment platform for AI agents built with LangGraph, FastAPI, and Streamlit. Features comprehensive Helm charts with dual-architecture deployment, ArgoCD GitOps integration, YugabyteDB with pgvector for RAG capabilities, and automated cron jobs for vector database maintenance. Includes both Streamlit and Next.js UIs with multi-agent support for resume assistance and web research.",
@@ -97,5 +107,5 @@
     "repo": "richardr1126/ShutesAndLaddersGUI",
     "demo": null,
     "tags": ["C++", "Qt"]
-  }
+   }
 ]
