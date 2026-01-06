@@ -1,5 +1,5 @@
 import { createStyles, ThemeIcon, Text, SimpleGrid, Box, Stack } from '@mantine/core';
-import { IconPhone, IconMapPin, IconAt } from '@tabler/icons-react';
+import { IconMapPin, IconAt } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme, { variant }) => ({
   wrapper: {
@@ -61,10 +61,7 @@ function ContactIcon({
 
 const MOCKDATA = [
   { title: 'Email', description: 'richard.roberson@colorado.edu', icon: IconAt },
-  { title: 'Other Email', description: 'richardr1126@gmail.com', icon: IconAt},
-  { title: 'Phone', description: '(561) 267-3440', icon: IconPhone },
   { title: 'Location', description: 'Boulder, CO', icon: IconMapPin },
-
 ];
 
 export function ContactIconsList({ data = MOCKDATA, variant }) {

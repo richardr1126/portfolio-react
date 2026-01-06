@@ -1,6 +1,5 @@
 import { Group, ActionIcon, rem } from '@mantine/core';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { LuMailPlus } from 'react-icons/lu';
 import { ReactComponent as IconHuggingFace }  from '../icons/huggingface.svg'
 
 export default function BrandButtonGroup({variant}) {
@@ -16,9 +15,6 @@ export default function BrandButtonGroup({variant}) {
       </ActionIcon>
       <ActionIcon color='blue' size={rem(40)} variant={variant} onClick={() => window.open('https://www.linkedin.com/in/richard-roberson/', '_blank')}>
         <FaLinkedin size={24} />
-      </ActionIcon>
-      <ActionIcon color='primary' size={rem(40)} variant={variant} onClick={() => window.open('mailto:richardr1126@gmail.com', '_blank')}>
-        <LuMailPlus size={24} />
       </ActionIcon>
     </Group>
   );
